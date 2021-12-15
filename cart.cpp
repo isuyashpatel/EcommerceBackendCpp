@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    Product p(1, "apple", 26);
+    Product p(1, "apple", 28);
     cout << p.getDisplayName();
     Item fruit(p, 3);
     cout << fruit.getItemInfo();
