@@ -3,6 +3,7 @@
 using namespace std;
 
 class Item;
+class Cart;
 class Product
 {
     int id;
@@ -35,5 +36,9 @@ public:
     int getItemPrice()
     {
         return quantity * product.price;
+    }
+    string getItemInfo()
+    {
+        return to_string(quantity) + " x " + product.name + " Rs. " + to_string(quantity * product.price);
     }
 };
