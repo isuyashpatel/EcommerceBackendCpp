@@ -46,7 +46,19 @@ bool checkout(Cart &cart)
     }
     int total = cart.getTotal();
     cout << "Pay in cash";
-    cin >> paid
+    int paid;
+    cin >> paid;
+    if (paid >= total)
+    {
+        cout << "Change " << paid - total << endl;
+        cout << "Thank you for shopping!";
+        return true;
+    }
+    else
+    {
+        cout << "Not Enough Cash!";
+        return false;
+    }
 }
 
 int main()
@@ -72,6 +84,15 @@ int main()
             cout << "---------------" << endl;
             cout << cart.viewCart();
             cout << "-------------" << endl;
+        }
+        else
+        {
+            // checkout
+            cart.viewCart();
+            if (checkout(cart))
+            {
+                break;
+            }
         }
     }
 
