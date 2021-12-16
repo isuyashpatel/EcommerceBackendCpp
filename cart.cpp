@@ -37,9 +37,22 @@ Product *chooseProduct()
     cout << "Product not found" << endl;
     return NULL;
 }
+
+bool checkout(Cart &cart)
+{
+    if (cart.isEmpty())
+    {
+        return false;
+    }
+    int total = cart.getTotal();
+    cout << "Pay in cash";
+    cin >> paid
+}
+
 int main()
 {
     char action;
+    Cart cart;
     while (true)
     {
         cout << "Select an action - (a)dd item, (v)iew cart, (c)heckout" << endl;
@@ -51,6 +64,14 @@ int main()
             Product *product = chooseProduct();
             if (product != NULL)
                 cout << "Added to the Cart " << product->getDisplayName() << endl;
+            cart.addProduct(*product);
+        }
+        else if (action == 'v')
+        {
+            // view the cart
+            cout << "---------------" << endl;
+            cout << cart.viewCart();
+            cout << "-------------" << endl;
         }
     }
 
